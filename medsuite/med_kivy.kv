@@ -1,0 +1,25 @@
+#: include theme.kv
+
+Sm:
+    id:sm
+    LoadingScreen:
+        name: 'loading_scr'
+        MDFloatLayout:
+            orientation:'vertical'
+            MDFloatLayout:
+                MDSpinner:
+                    size_hint:(.3 , .3)
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    active:True
+                LineText:
+                    text:'loading'
+                    size_hint:(.2,.2)
+                    font_size:app.window_width * 0.04
+                    pos_hint:{'center_x':.52,'center_y':.5}
+            MDFloatLayout:
+                id : layout
+                LineText:
+                    id: exception
+                    text:''
+                    pos_hint:{'center_x':.5,'center_y':.2}
+                    theme_text_color:'Error'

@@ -1,0 +1,36 @@
+LogScreen:
+    name:'log_scr'
+    ToolbarIconButton:
+        icon:'close'
+        on_press:app.stop()
+        pos_hint:{'center_x':.9, 'center_y':.95}
+    ToolbarIconButton:
+        icon:'help'
+        on_press:app.go_to_screen('help_scr')
+        pos_hint:{'center_x':.8, 'center_y':.95}
+    LineText:
+        text:"choose one of the following"
+        halign: 'center'
+        pos_hint:{'center_x':.5 , 'center_y':.9}
+    MDTextButton:
+        id:login_but
+        text:'Login\n\n    if you had sign up past select login to import your username and password'
+        padding:(10,5)
+        size_hint:(.9 , .2)
+        on_release: app.go_to_screen('login_scr')
+        pos_hint:{'center_x':.5 , 'center_y':.7}
+    MDTextButton:
+        id:signup_but
+        text:'Sign Up\n\n    if you have no username and password please sign up first'
+        padding:(10,5)
+        size_hint:(.9 , .2)
+        on_press:app.go_to_screen('signup_scr')
+        pos_hint:{'center_x':.5 , 'center_y':.45}
+    MDTextButton:
+        padding:(10,5)
+        size_hint:(.9 , .2)
+        id:demo_but
+        text:'Demo\n\n    click the demo to use free version of app this version not complete access'
+        on_release: app.go_to_screen('home_s')
+        pos_hint:{'center_x':.5 , 'center_y':.2}
+

@@ -1,0 +1,3 @@
+from kivymd.uix.button import MDFloatingActionButtonSpeedDial
+
+print(MDFloatingActionButtonSpeedDial.__doc__)

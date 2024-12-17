@@ -1,0 +1,139 @@
+HomeScreen:
+    name:'home_scr'
+
+    MDTopAppBar:
+        id:top_app
+        elevation:4
+        pos_hint:{'top':1}
+        md_bg_color:app.theme_cls.bg_light
+        #specific_text_color:app.theme_cls.primary_color
+        left_action_items:
+            [['menu', lambda x: nav_drawer.set_state("open")]]
+        right_action_items:
+            [
+            ['help', lambda x: app.label1_change('go to help screen')],
+            ['email', lambda x:app.label1_change('go to email screen')],
+            ['autorenew', lambda x: app.label1_change('go to home screen')],
+            ['chat', lambda x: app.label1_change('go to chat screen')],
+            ['apps', lambda x: app.add_screen()],
+            ]
+
+    MDNavigationLayout:
+        MDScreenManager:
+            id:screen_manager
+            Screen:
+                id :screen1
+                MDLabel:
+                    id:label1
+                    text: "My Content"
+                    font_size:25
+                    text_color:app.theme_cls.primary_light
+                MDIcon:
+                    icon:'gmail'
+                    badge_icon:'numeric-10'
+                    pos_hint:{'x':.5 ,'y':.5}
+
+                MDFlatButton:
+                    text:'test'
+                    font_style:'H6'
+                    on_press:app.test()
+
+                MDFloatingActionButtonSpeedDial:
+                    id: speed_dial
+                    data: app.data
+                    root_button_anim: True
+                    hint_animation: True
+            Screen:
+                id:screen2
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            md_bg_color:app.theme_cls.bg_light
+            MDScrollView:
+                MDList:
+                    MDIconButton:
+                        icon:"arrow-left"
+                        on_press: nav_drawer.set_state("close")
+                    MDNavigationDrawerHeader:
+                        title: "MedSuite"
+                        text: "user name"
+                        spacing: "2dp"
+                        padding: "5dp", 0, 0, "5dp"
+                        theme_text_color:'Custom'
+                        text_color:app.theme_cls.primary_light
+                        title_color: app.theme_cls.primary_light
+                    MDNavigationDrawerDivider:
+                    OneLineIconListItem:
+                        text: 'apps'
+                        on_press:
+                            app.add_screen()
+                            nav_drawer.set_state("close")
+                        IconLeftWidget:
+                            icon: 'apps'
+                            on_press:
+                                app.add_screen()
+                                nav_drawer.set_state("close")
+                    OneLineIconListItem:
+                        font_style: 'Subtitle2'
+                        text: 'calculator'
+                        on_press:
+                            app.calculator_screen()
+                            nav_drawer.set_state("close")
+                        IconLeftWidget:
+                            icon: 'calculator'
+                            on_press:
+                                app.calculator_screen()
+                                nav_drawer.set_state("close")
+
+                    OneLineIconListItem:
+                        text: 'account'
+                        on_press:
+                            app.account_screen()
+                            nav_drawer.set_state("close")
+                        IconLeftWidget:
+                            icon: 'account-edit'
+                            on_press:
+                                app.account_screen()
+                                nav_drawer.set_state("close")
+                    OneLineIconListItem:
+                        font_style: 'Subtitle2'
+                        text: 'Setting'
+                        on_press:
+                            app.setting_screen()
+                            nav_drawer.set_state("close")
+                        IconLeftWidget:
+                            icon: 'cog'
+                            on_press:
+                                app.setting_screen()
+                                nav_drawer.set_state("close")
+                    OneLineIconListItem:
+                        font_style: 'Subtitle2'
+                        text: 'Contact us'
+                        on_press:
+                            app.load_screen()
+                            nav_drawer.set_state("close")
+                        IconLeftWidget:
+                            icon: 'phone'
+                            on_press:
+                                app.load_screen()
+                                nav_drawer.set_state("close")
+                    OneLineIconListItem:
+                        font_style: 'Subtitle2'
+                        text: 'Log out'
+                        on_press:
+                            app.login_screen()
+                            nav_drawer.set_state("close")
+                        IconLeftWidget:
+                            icon: 'logout'
+                            on_press:
+                                app.login_screen()
+                                nav_drawer.set_state("close")
+                    OneLineIconListItem:
+                        font_style: 'Subtitle2'
+                        text: 'Close App'
+                        on_press: app.stop()
+                        IconLeftWidget:
+                            icon: 'close'
+                            on_press:app.stop()
+    MDWidget:
+

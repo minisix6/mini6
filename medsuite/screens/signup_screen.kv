@@ -1,0 +1,68 @@
+SignupScreen:
+    name:'signup_scr'
+    ToolbarIconButton:
+        icon:'close'
+        on_press:app.stop()
+        pos_hint:{'center_x':.9, 'center_y':.95}
+    ToolbarIconButton:
+        icon:'help'
+        on_press:app.go_to_screen('help_scr')
+        pos_hint:{'center_x':.8, 'center_y':.95}
+    InputField:
+        hint_text:"* Choose Username"
+        helper_text: "* Choose Username"
+        max_text_length: 30
+        pos_hint:{'center_x':.5 , 'center_y':.85}
+    MDFlatButton:
+        padding:(10 , 10)
+        text:'Verify the username'
+        pos_hint:{'center_x':.5 , 'center_y':.77}
+    InputField:
+        id: pass_f1
+        hint_text:"* Set Password"
+        helper_text:"* Set Password"
+        max_text_length: 20
+        password:True
+        pos_hint:{'center_x':.5 , 'center_y':.7}
+    InputField:
+        id: pass_f2
+        hint_text:"* Repeat Password"
+        helper_text:"* Repeat Password"
+        max_text_length: 20
+        password:True
+        pos_hint:{'center_x':.5 , 'center_y':.6}
+    MDIconButton:
+        id: eye_icon
+        icon:"eye-off"
+        on_release:
+            self.icon = "eye" if self.icon == "eye-off" else 'eye-off'
+            pass_f1.password = False if pass_f1.password is True else True
+            pass_f2.password = False if pass_f2.password is True else True
+            self.icon_color = app.theme_cls.primary_color if self.icon == 'eye' else app.theme_cls.accent_light
+        pos_hint:{'center_x':.8 , 'center_y':.6}
+    InputField:
+        hint_text:"* Phone Number"
+        helper_text: "* Phone Number"
+        #helper_text_mode:"on_error" #or "persistent"
+        max_text_length: 15
+        pos_hint:{'center_x':.5 , 'center_y':.5}
+    InputField:
+        hint_text:"Email"
+        helper_text: "Email"
+        #helper_text_mode:"on_error" #or "persistent"
+        max_text_length: 20
+        # required:True
+        password:True
+        pos_hint:{'center_x':.5 , 'center_y':.4}
+    MDRaisedButton:
+        text:'Continue Sign Up'
+        on_release: app.sign_up(None)
+        pos_hint:{'center_x':.5 , 'center_y':.25}
+    MDFlatButton:
+        pos_hint:{'x':.1 , 'center_y':.15}
+        text:"Login"
+        on_press:app.go_to_screen('login_scr')
+    MDFlatButton:
+        pos_hint:{'x':.1 , 'center_y':.1}
+        text:"Demo"
+        on_press:app.go_to_screen('home_s')

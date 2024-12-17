@@ -1,0 +1,15 @@
+AppsScreen:
+    name:"apps_s"
+    Screen:
+        id:scr
+        MDBoxLayout:
+            orientation:'vertical'
+            size_hint_y:1
+            MDScrollView:
+                MDGridLayout:
+                    id:content
+                    cols:1
+                    size_hint_y:None
+                    height:self.minimum_height
+                    padding:(10,20)
+                    spacing:10

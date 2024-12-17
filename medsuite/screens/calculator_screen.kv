@@ -1,0 +1,74 @@
+CalculatorScreen:
+    name:'calculator_s'
+    GridLayout:
+        cols:1
+        adaptive_size:True
+
+        LineText:
+            id: label
+            text: '0'
+            font_style: 'H4'
+            halign: 'right'
+            size_hint_y: None
+            height: self.texture_size[1]
+        GridLayout:
+            cols: 4
+            spacing: 3
+            padding: 3
+            MDIconButton:
+                icon: 'calculator-variant'
+                on_press: app.calculate('C')
+            MDIconButton:
+                icon: 'backspace-outline'
+                on_press: app.calculate('B')
+            MDIconButton:
+                icon: 'percent'
+                on_press: app.calculate('%')
+            MDIconButton:
+                icon: 'divide'
+                on_press: app.calculate('/')
+            MDIconButton:
+                icon: 'numeric-7'
+                on_press: app.calculate('7')
+            MDIconButton:
+                icon: 'numeric-8'
+                on_press: app.calculate('8')
+            MDIconButton:
+                icon: 'numeric-9'
+                on_press: app.calculate('9')
+            MDIconButton:
+                icon: 'multiply'
+                on_press: app.calculate('*')
+            MDIconButton:
+                icon: 'numeric-4'
+                on_press: app.calculate('4')
+            MDIconButton:
+                icon: 'numeric-5'
+                on_press: app.calculate('5')
+            MDIconButton:
+                icon: 'numeric-6'
+                on_press: app.calculate('6')
+            MDIconButton:
+                icon: 'minus'
+                on_press: app.calculate('-')
+            MDIconButton:
+                icon: 'numeric-1'
+                on_press: app.calculate('1')
+            MDIconButton:
+                icon: 'numeric-2'
+                on_press: app.calculate('2')
+            MDIconButton:
+                icon: 'numeric-3'
+                on_press: app.calculate('3')
+            MDIconButton:
+                icon: 'plus'
+                on_press: app.calculate('+')
+            MDIconButton:
+                icon: 'numeric-0'
+                on_press: app.calculate('0')
+            MDIconButton:
+                icon: 'decimal'
+                on_press: app.calculate('.')
+            MDIconButton:
+                icon: 'equal'
+                on_press: app.calculate('=')

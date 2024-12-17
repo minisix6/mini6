@@ -1,0 +1,75 @@
+Screen:
+    size_hint_y:.75
+    MDLabel:
+        padding_x:20
+        theme_text_color:'Hint'
+        text:"Import number only in entry max 5 digit and use dote for float input. for example '7.25'"
+        pos_hint:{'center_x':.5 , 'center_y':.93}
+    MDFlatButton:
+        text:'More help'
+        size_hint:(.2 ,.08)
+        pos_hint:{'center_x':.16 , 'center_y':.85}
+    MDIconButton:
+        icon:'menu-up'
+        size_hint:(.2 ,.07)
+        pos_hint:{'center_x':.5 , 'center_y':.80}
+    MDScrollView:
+        do_scroll_x:False
+        do_scroll_y:True
+        size_hint:(.9 , .6)
+        pos_hint:{'center_x':.5 , 'center_y':.48}
+        MDGridLayout:
+            cols:1
+            size_hint:(1 , None)
+            height:self.minimum_height
+            md_bg_color:app.theme_cls.bg_light
+            MDTextField:
+                hint_text: "PH"
+                helper_text: "Wrong input"
+                helper_text_mode: "on_error"
+                max_text_length: 5
+            MDTextField:
+                hint_text: "PCo2"
+                helper_text: "Wrong input"
+                helper_text_mode: "on_error"
+                max_text_length: 5
+            MDTextField:
+                hint_text: "HCo3"
+                helper_text: "Wrong input"
+                helper_text_mode: "on_error"
+                max_text_length: 5
+            MDTextField:
+                hint_text: "BE"
+                helper_text: "Wrong input"
+                helper_text_mode: "on_error"
+                max_text_length: 5
+            MDTextField:
+                hint_text: "O2sat"
+                helper_text: "Wrong input"
+                helper_text_mode: "on_error"
+                max_text_length: 5
+            MDTextField:
+                hint_text: "Po2"
+                helper_text: "Wrong input"
+                helper_text_mode: "on_error"
+                max_text_length: 5
+            MDTextField:
+                hint_text: "more item"
+                helper_text: "Wrong input"
+                helper_text_mode: "on_error"
+                max_text_length: 5
+            MDTextField:
+                hint_text: "More item"
+                helper_text: "Wrong input"
+                helper_text_mode: "on_error"
+                max_text_length: 5
+    MDIconButton:
+        icon:'menu-down'
+        size_hint:(.2 ,.07)
+        pos_hint:{'center_x':.5 , 'center_y':.16}
+    MDTextButton:
+        id:"clk"
+        text: "result"
+        on_press: app.test('result3')
+        pos_hint:{'center_x':.5 , 'center_y':0.08}
+    MDWidget:

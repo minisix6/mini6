@@ -1,0 +1,26 @@
+ MDBoxLayout:
+                    orientation:'vertical'
+                    size_hint_y:.4
+                    MDGridLayout:
+                        cols:3
+                        size_hint_y:self.height
+                        MDIconButton:
+                            size_hint:[.06 , self.height]
+                            pos_hint_y:{'center_y':.5}
+                            padding:0
+                            icon:'menu-left'
+                        MDTabs:
+                            id:tabs
+#                            tab_bar_height :self.height
+                            background_color:app.theme_cls.bg_light
+                            underline_color:app.theme_cls.bg_light
+                            text_color_normal:app.theme_cls.primary_color
+                            text_color_active:app.theme_cls.primary_light
+                            indicator_color:app.theme_cls.bg_normal
+                            tab_indicator_type:'fill'   # line , fill , round , line-rect , line-round
+                            size_hint_y:self.height
+                            elevation:1
+                            on_tab_switch:app.on_tab_switch(*args)
+                        MDIconButton:
+                            size_hint:[.06 , self.height]
+                            icon:'menu-right'

@@ -1,0 +1,35 @@
+LoadScreen:
+    name:'load_scr'
+    ToolbarIconButton:
+        icon:'close'
+        on_press:app.stop()
+        pos_hint:{'center_x':.9, 'center_y':.95}
+    ToolbarIconButton:
+        icon:'help'
+        on_press:app.go_to_screen('help_scr')
+        pos_hint:{'center_x':.8, 'center_y':.95}
+    LineText:
+        text:"This app is designed for medical and para medical students and personnel"
+        halign: 'center'
+        pos_hint:{'center_x':.5 , 'center_y':.8}
+    LineText:
+        text: "Warning:"
+        font_style:'H6'
+        halign: 'center'
+        theme_text_color:"Error"
+        pos_hint:{'center_x':.5 , 'center_y':.7}
+    LineText:
+        text: "It is forbidden to use it for home treatment"
+        theme_text_color:"Error"
+        halign: 'center'
+        pos_hint:{'center_x':.5 , 'center_y':.6}
+    LineText:
+        text: "More details about the app"
+        halign: 'center'
+        theme_text_color:"Custom"
+        pos_hint:{'center_x':.5 , 'center_y':.5}
+    MDTextButton:
+        id:"Continue"
+        text: "Continue"
+        on_press: app.go_to_screen('log_scr')
+        pos_hint:{'center_x':.5 , 'center_y':.3}
